@@ -1,3 +1,20 @@
+/*
+3. feladat
+Irjon programot, mely a standard bemenetrol legfeljebb 20 darab, maximalisan 50 karakterbol allo sztringeket ovlas be.
+A program irja ki a standard kimenet elso soraba, hogy haby karakterbol allt az a szo, amelyik a legrovidebb volt.
+A program irja ki azoakt a sztringeket elofordulasukkal ellentetes sorrendben (soronkent egyet), amelyek hosszabbak, mint a legrovidebb szo hosszanak ketszerese.
+alma
+dio
+barackfa
+eper
+kortefa
+dinnye
+3
+kortefa
+barackfa
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
