@@ -1,3 +1,20 @@
+/*
+2. feladat
+
+Irjon programot, amely a standard bemenetrol soronkent ket legfeljebb 100 karakter hosszusagu sztringet olvas be allomanyvegjelig.
+A ket szi kizarolag az angol ABC kisbetuit tartalmazza es pontosan egy darab szokoz karakterrel van elvalasztva. Irjon fuggvenyt,
+mely parameterkent, megkap 2 sztringet es a ket string megvaltoztatasa nelkul letrehoz egy uj stringet, mely azokat a karaktereket tartalmazza, mely az elso
+sztringben benne van, de a masodikban nincs. Hivja meg a fuggvenyt minden beolvasott szoparra es irja ki a standard kimenetre soronkent a letrohozott uj
+sztringet.
+alma abba
+abcdef chd
+aabddef af
+lm
+abef
+bdee
+*/
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
