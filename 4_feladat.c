@@ -13,6 +13,7 @@ DF123D;Alma Janos;23;4
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 typedef struct Hallgato{
 	char neptunKod[7];
