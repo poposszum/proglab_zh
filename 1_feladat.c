@@ -1,3 +1,19 @@
+/*
+1.feladat
+
+Irjon programot, amely a standard bemenetrol soronkent egy vagy tobb nem negativ szamot olvas!
+Ha a sor elsokent beolvasott szama 0, a program fejezze be a mukodeset. Ha a sor elso szama pozitiv,
+akkor az azt jelenti, hogy a sorban hany tovabbi szam talalhato. A program irja ki minden sor eseten pontosan
+egy szokoz karakterrel elvalasztva a masodik elemtol aaz utolso elemig vett elemek atlagat es azt a szamot az elobb felsoroltak kozul,
+mely a legkozelebb esik az atlaghoz. Ha tobb ilyen elem is lenne, akkor a felsorolasban legeloszor szereplo elemet irja ki.
+5 1 2 3 4 5
+4 5 5 5 1
+0
+3.0 3
+4.0 5
+*/
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
