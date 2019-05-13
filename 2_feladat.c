@@ -1,61 +1,38 @@
-/*
-2. feladat
-
-Irjon programot, amely a standard bemenetrol soronkent ket legfeljebb 100 karakter hosszusagu sztringet olvas be allomanyvegjelig.
-A ket szi kizarolag az angol ABC kisbetuit tartalmazza es pontosan egy darab szokoz karakterrel van elvalasztva. Irjon fuggvenyt,
-mely parameterkent, megkap 2 sztringet es a ket string megvaltoztatasa nelkul letrehoz egy uj stringet, mely azokat a karaktereket tartalmazza, mely az elso
-sztringben benne van, de a masodikban nincs. Hivja meg a fuggvenyt minden beolvasott szoparra es irja ki a standard kimenetre soronkent a letrohozott uj
-sztringet.
-alma abba
-abcdef chd
-aabddef af
-lm
-abef
-bdee
-*/
-
-
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-char *torolBetu(char *elsoSzo, char *masodikSzo);
-
-int main(){
+int main(int argc, char*argv[]){
 	
-	char beOlvas[101];
+	FILE *f = fopen(argv[1],"r");
 	
-	while (gets(beOlvas) != NULL){
-		
-		char *token = strtok(beOlvas, " ");
-		char *elsoSzo = (char *) malloc(strlen(token)+1 * sizeof(char));
-		strcpy(elsoSzo, token);
-		
-		token = strtok(NULL, " ");
-		char *masodikSzo = (char *) malloc(strlen(token)+1 * sizeof(char));
-		strcpy(masodikSzo, token);
-
-		puts(torolBetu(elsoSzo, masodikSzo));		
+	if(f == NULL){
+		printf("A fajl nem letezik!\n");
+		return -1;
 	}
-	return 0;
-}
-
-char *torolBetu(char *elsoSzo, char *masodikSzo){
-	int i , k = 0, elsoHossz = strlen(elsoSzo), masodikHossz = strlen(masodikSzo);
-	int elsoSzoTomb[27] = {0}, masodikSzoTomb[27] = {0};
-	char *vegsoTomb = (char *) malloc(elsoHossz * sizeof(char));
 	
-	for (i = 0; i < elsoHossz; i++)
-		elsoSzoTomb[elsoSzo[i] - 97] = 1;
+	char beOlvas[301];
+	char legHosszabb[301];
+	int max = -1;
 	
-	for (i = 0; i < masodikHossz; i++)
-		masodikSzoTomb[masodikSzo[i] - 97] = 1;
-
-	for (i = 0; i < elsoHossz; i++)
-		if (elsoSzoTomb[elsoSzo[i] - 97] != masodikSzoTomb[elsoSzo[i] - 97])
-			vegsoTomb[k++] = elsoSzo[i];
+		while (fgets(beOlvas, 300, f) != NULL){
+			
+			//puts(beOlvas);
+			
+			if (isupper(beOlvas[0])){
+				puts(beOlvas);
+				
+				if (strlen(beOlvas) > max){
+					max = strlen(beOlvas);
+					strcpy(legHosszabb, beOlvas);
+					legHosszabb[strlen(beOlvas)+1] = '\0';
+				}
+			}
+		}
 		
-	vegsoTomb[k] = '\0';
+		puts(legHosszabb);
 	
-	return vegsoTomb;
+	fclose(f);
+	
+	return 0;
 }
